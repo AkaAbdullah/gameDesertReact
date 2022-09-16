@@ -1,17 +1,41 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import SearchModal from './SearchModal'
 import { Link } from 'react-scroll'
+import { GiHamburgerMenu } from 'react-icons/gi'
 import {
   AiFillFacebook,
   AiFillTwitterSquare,
   AiFillLinkedin,
+  AiOutlineClose,
 } from 'react-icons/ai'
 import { BsPinterest, BsSearch } from 'react-icons/bs'
+import { NavBarContext } from '../context/cssContext'
+import MenuDropDown from './MenuDropDown'
 
 const TopHeader = () => {
-  const [modal, setModal] = useState(false)
+  const { state1 } = useContext(NavBarContext)
+  const [mobView, setMobView] = state1
+  const { state2 } = useContext(NavBarContext)
+  const [modal, setModal] = state2
+  const { state3 } = useContext(NavBarContext)
+  const [hamBurger, setHamburger] = state3
+  const { state4 } = useContext(NavBarContext)
+  const [cross, setCross] = state4
+
   const handleSearch = () => {
     setModal(true)
+  }
+
+  const handleDropDown = () => {
+    setHamburger(false)
+    setCross(true)
+    setMobView(true)
+  }
+  const handleClose = () => {
+    setMobView(false)
+    setCross(false)
+    setHamburger(true)
+    console.log('first')
   }
 
   return (
@@ -93,22 +117,12 @@ const TopHeader = () => {
               </button>
 
               <button
+                onClick={handleDropDown}
                 className='nav-toggle-btn'
                 aria-label='toggle menu'
-                data-nav-toggler=''
               >
-                <ion-icon
-                  name='menu-outline'
-                  className='menu md hydrated'
-                  role='img'
-                  aria-label='menu outline'
-                ></ion-icon>
-                <ion-icon
-                  name='close-outline'
-                  className='close md hydrated'
-                  role='img'
-                  aria-label='close outline'
-                ></ion-icon>
+                {mobView ? <MenuDropDown /> : <GiHamburgerMenu />}
+                {cross && <AiOutlineClose onClick={handleClose} />}
               </button>
             </div>
           </div>

@@ -5,7 +5,7 @@ import { BsArrowUpCircle } from 'react-icons/bs'
 const Arrow = () => {
   return (
     <>
-      <Link to='top' class='back-top-btn active' aria-label='back to top'>
+      <Link to='top' className='back-top-btn active' aria-label='back to top'>
         <BsArrowUpCircle />
       </Link>
     </>
