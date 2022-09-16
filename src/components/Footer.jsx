@@ -1,5 +1,13 @@
 import React from 'react'
 import payment from '../assests/images/footer-bottom-img.png'
+import {
+  AiFillFacebook,
+  AiFillTwitterSquare,
+  AiFillLinkedin,
+} from 'react-icons/ai'
+import { BsPinterest, BsFillTelephoneFill } from 'react-icons/bs'
+import { IoLocationSharp } from 'react-icons/io5'
+import { MdEmail } from 'react-icons/md'
 
 const Footer = () => {
   return (
@@ -17,12 +25,7 @@ const Footer = () => {
               <ul class='contact-list'>
                 <li class='contact-item'>
                   <div class='contact-icon'>
-                    <ion-icon
-                      name='location'
-                      role='img'
-                      class='md hydrated'
-                      aria-label='location'
-                    ></ion-icon>
+                    <IoLocationSharp />
                   </div>
                   <address class='item-text'>
                     Address : 2A Compton Avenue East Ham, London E6 3DP , UK
@@ -30,12 +33,7 @@ const Footer = () => {
                 </li>
                 <li class='contact-item'>
                   <div class='contact-icon'>
-                    <ion-icon
-                      name='location'
-                      role='img'
-                      class='md hydrated'
-                      aria-label='location'
-                    ></ion-icon>
+                    <IoLocationSharp />
                   </div>
                   <address class='item-text'>
                     Address : MangoSpace 182 Y Commercial Area, Sector Y DHA
@@ -44,12 +42,7 @@ const Footer = () => {
                 </li>
                 <li class='contact-item'>
                   <div class='contact-icon'>
-                    <ion-icon
-                      name='headset'
-                      role='img'
-                      class='md hydrated'
-                      aria-label='headset'
-                    ></ion-icon>
+                    <BsFillTelephoneFill />
                   </div>
                   <a href='tel:+447477320233' class='item-text'>
                     Phone : +44 747 7320233
@@ -57,12 +50,7 @@ const Footer = () => {
                 </li>
                 <li class='contact-item'>
                   <div class='contact-icon'>
-                    <ion-icon
-                      name='headset'
-                      role='img'
-                      class='md hydrated'
-                      aria-label='headset'
-                    ></ion-icon>
+                    <BsFillTelephoneFill />
                   </div>
                   <a href='tel:+923059192811' class='item-text'>
                     Phone : +92 305 9192811
@@ -70,12 +58,7 @@ const Footer = () => {
                 </li>
                 <li class='contact-item'>
                   <div class='contact-icon'>
-                    <ion-icon
-                      name='mail-open'
-                      role='img'
-                      class='md hydrated'
-                      aria-label='mail open'
-                    ></ion-icon>
+                    <MdEmail />
                   </div>
                   <a href='mailto:info@desertgamestudio.com' class='item-text'>
                     Email : info@desertgamestudio.com
@@ -85,15 +68,13 @@ const Footer = () => {
             </div>
 
             <ul class='footer-list'>
-              <li>
-                <p class='footer-list-title'>Careers</p>
-              </li>
+              <li>{/* <p class='footer-list-title'>Careers</p> */}</li>
 
-              <li>
+              {/* <li>
                 <a href='mailto:HR@desertgamestudio.com' class='footer-link'>
                   HR@desertgamestudio.com
                 </a>
-              </li>
+              </li> */}
             </ul>
 
             <ul class='footer-list'>
@@ -125,12 +106,7 @@ const Footer = () => {
                       class='social-link'
                       style={{ backgroundColor: '#3b5998' }}
                     >
-                      <ion-icon
-                        name='logo-facebook'
-                        role='img'
-                        class='md hydrated'
-                        aria-label='logo facebook'
-                      ></ion-icon>
+                      <AiFillFacebook />
                     </a>
                   </li>
 
@@ -140,12 +116,7 @@ const Footer = () => {
                       class='social-link'
                       style={{ backgroundColor: '#55acee' }}
                     >
-                      <ion-icon
-                        name='logo-twitter'
-                        role='img'
-                        class='md hydrated'
-                        aria-label='logo twitter'
-                      ></ion-icon>
+                      <AiFillTwitterSquare />
                     </a>
                   </li>
 
@@ -155,12 +126,7 @@ const Footer = () => {
                       class='social-link'
                       style={{ backgroundColor: '#d71e18' }}
                     >
-                      <ion-icon
-                        name='logo-pinterest'
-                        role='img'
-                        class='md hydrated'
-                        aria-label='logo pinterest'
-                      ></ion-icon>
+                      <BsPinterest />
                     </a>
                   </li>
 
@@ -170,12 +136,7 @@ const Footer = () => {
                       class='social-link'
                       style={{ backgroundColor: '#1565c0' }}
                     >
-                      <ion-icon
-                        name='logo-linkedin'
-                        role='img'
-                        class='md hydrated'
-                        aria-label='logo linkedin'
-                      ></ion-icon>
+                      <AiFillLinkedin />
                     </a>
                   </li>
                 </ul>

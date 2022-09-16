@@ -1,4 +1,5 @@
 import React from 'react'
+import Arrow from '../components/Arrow'
 import BlogSction from '../components/BlogSction'
 import Body from '../components/Body'
 import Footer from '../components/Footer'
@@ -10,6 +11,7 @@ const HomeScreen = () => {
   return (
     <>
       <body id='top'>
+        <Arrow />
         <TopHeader />
         <Body />
         <Services />

@@ -1,9 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
+import SearchModal from './SearchModal'
+import { Link } from 'react-scroll'
+import {
+  AiFillFacebook,
+  AiFillTwitterSquare,
+  AiFillLinkedin,
+} from 'react-icons/ai'
+import { BsPinterest, BsSearch } from 'react-icons/bs'
 
 const TopHeader = () => {
+  const [modal, setModal] = useState(false)
+  const handleSearch = () => {
+    setModal(true)
+  }
+
   return (
     <>
-      <header className='header'>
+      {modal && <SearchModal />}
+      <header id='home' className='header'>
         <div className='header-top'>
           <div className='container'>
             <div className='countdown-text'></div>
@@ -12,42 +26,22 @@ const TopHeader = () => {
               <ul className='social-list'>
                 <li>
                   <a href='/' className='social-link'>
-                    <ion-icon
-                      name='logo-facebook'
-                      role='img'
-                      className='md hydrated'
-                      aria-label='logo facebook'
-                    ></ion-icon>
+                    <AiFillFacebook />
                   </a>
                 </li>
                 <li>
                   <a href='/' className='social-link'>
-                    <ion-icon
-                      name='logo-twitter'
-                      role='img'
-                      className='md hydrated'
-                      aria-label='logo twitter'
-                    ></ion-icon>
+                    <AiFillTwitterSquare />
                   </a>
                 </li>
                 <li>
                   <a href='/' className='social-link'>
-                    <ion-icon
-                      name='logo-pinterest'
-                      role='img'
-                      className='md hydrated'
-                      aria-label='logo pinterest'
-                    ></ion-icon>
+                    <BsPinterest />
                   </a>
                 </li>
                 <li>
                   <a href='/' className='social-link'>
-                    <ion-icon
-                      name='logo-linkedin'
-                      role='img'
-                      className='md hydrated'
-                      aria-label='logo linkedin'
-                    ></ion-icon>
+                    <AiFillLinkedin />
                   </a>
                 </li>
               </ul>
@@ -64,52 +58,38 @@ const TopHeader = () => {
             <nav className='navbar' data-navbar=''>
               <ul className='navbar-list'>
                 <li className='navbar-item'>
-                  <button className='navbar-link skewBg' data-nav-link=''>
+                  <Link to='home' className='navbar-link skewBg'>
                     Home
-                  </button>
+                  </Link>
                 </li>
 
                 <li className='navbar-item'>
-                  <a
-                    href='#features'
-                    className='navbar-link skewBg'
-                    data-nav-link
-                  >
+                  <Link to='services' className='navbar-link skewBg'>
                     Services
-                  </a>
+                  </Link>
                 </li>
 
                 <li className='navbar-item'>
-                  <button className='navbar-link skewBg' data-nav-link=''>
-                    Blog
-                  </button>
+                  <Link to='carrier' className='navbar-link skewBg'>
+                    Carrier
+                  </Link>
                 </li>
                 <li className='navbar-item'>
-                  <button className='navbar-link skewBg' data-nav-link=''>
+                  <Link to='contact' className='navbar-link skewBg'>
                     Contact
-                  </button>
+                  </Link>
                 </li>
               </ul>
             </nav>
 
             <div className='header-actions'>
-              <button className='cart-btn' aria-label='cart'>
-                <ion-icon name='cart'></ion-icon>
-
-                <span className='cart-badge'>0</span>
-              </button>
-
               <button
                 className='search-btn'
                 aria-label='open search'
                 data-search-toggler=''
+                onClick={handleSearch}
               >
-                <ion-icon
-                  name='search-outline'
-                  role='img'
-                  className='md hydrated'
-                  aria-label='search outline'
-                ></ion-icon>
+                <BsSearch />
               </button>
 
               <button

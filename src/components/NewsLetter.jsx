@@ -3,7 +3,7 @@ import React from 'react'
 const NewsLetter = () => {
   return (
     <>
-      <section className='newsletter' aria-label='newsletter'>
+      <section id='contact' className='newsletter' aria-label='newsletter'>
         <div className='container'>
           <div className='newsletter-card'>
             <h2 className='h2'>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { IoMdNotifications } from 'react-icons/io'
 
 import rg1 from '../assests/images/featured-game-1.jpg'
 import rg2 from '../assests/images/featured-game-2.jpg'
@@ -44,12 +45,7 @@ const ReleasedGames = () => {
                   </h3>
 
                   <span className='card-meta'>
-                    <ion-icon
-                      name='notifications'
-                      role='img'
-                      className='md hydrated'
-                      aria-label='notifications'
-                    ></ion-icon>
+                    <IoMdNotifications />
 
                     <span className='span'>Playstation 5, Xbox</span>
                   </span>
@@ -109,12 +105,7 @@ const ReleasedGames = () => {
                   </h3>
 
                   <span className='card-meta'>
-                    <ion-icon
-                      name='notifications'
-                      role='img'
-                      className='md hydrated'
-                      aria-label='notifications'
-                    ></ion-icon>
+                    <IoMdNotifications />
 
                     <span className='span'>Playstation 5, Xbox</span>
                   </span>
@@ -174,12 +165,7 @@ const ReleasedGames = () => {
                   </h3>
 
                   <span className='card-meta'>
-                    <ion-icon
-                      name='notifications'
-                      role='img'
-                      className='md hydrated'
-                      aria-label='notifications'
-                    ></ion-icon>
+                    <IoMdNotifications />
 
                     <span className='span'>Playstation 5, Xbox</span>
                   </span>
@@ -239,12 +225,7 @@ const ReleasedGames = () => {
                   </h3>
 
                   <span className='card-meta'>
-                    <ion-icon
-                      name='notifications'
-                      role='img'
-                      className='md hydrated'
-                      aria-label='notifications'
-                    ></ion-icon>
+                    <IoMdNotifications />
 
                     <span className='span'>Playstation 5, Xbox</span>
                   </span>
