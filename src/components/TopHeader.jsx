@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import SearchModal from './SearchModal'
 import { Link } from 'react-scroll'
 import { GiHamburgerMenu } from 'react-icons/gi'
@@ -21,21 +21,16 @@ const TopHeader = () => {
   const [hamBurger, setHamburger] = state3
   const { state4 } = useContext(NavBarContext)
   const [cross, setCross] = state4
+  const { state5 } = useContext(NavBarContext)
+  const [toogle, setToogle] = state5
 
   const handleSearch = () => {
     setModal(true)
   }
 
   const handleDropDown = () => {
-    setHamburger(false)
-    setCross(true)
     setMobView(true)
-  }
-  const handleClose = () => {
-    setMobView(false)
-    setCross(false)
-    setHamburger(true)
-    console.log('first')
+    setToogle(true)
   }
 
   return (
@@ -121,8 +116,8 @@ const TopHeader = () => {
                 className='nav-toggle-btn'
                 aria-label='toggle menu'
               >
-                {mobView ? <MenuDropDown /> : <GiHamburgerMenu />}
-                {cross && <AiOutlineClose onClick={handleClose} />}
+                {toogle ? <AiOutlineClose /> : <GiHamburgerMenu />}
+                {mobView && <MenuDropDown />}
               </button>
             </div>
           </div>

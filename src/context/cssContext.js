@@ -7,6 +7,7 @@ export const NavBarContextProvider = (props) => {
   const [modal, setModal] = useState(false)
   const [hamBurger, setHamburger] = useState(true)
   const [cross, setCross] = useState(false)
+  const [toogle, setToogle] = useState(false)
   return (
     <NavBarContext.Provider
       value={{
@@ -14,6 +15,7 @@ export const NavBarContextProvider = (props) => {
         state2: [modal, setModal],
         state3: [hamBurger, setHamburger],
         state4: [cross, setCross],
+        state5: [toogle, setToogle],
       }}
     >
       {props.children}
