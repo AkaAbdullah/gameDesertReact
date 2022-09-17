@@ -15,15 +15,15 @@ const BlogSction = () => {
           <div className='carrier-section'>
             <div className='carrier-card'>
               <h2 className='carrier-title'>GAME DEVELOPER</h2>
-              <button className='apply-btn'>Apply now</button>
+              <button className='apply-btn'><a href="mailto:HR@desertgamestudio.com">Apply now</a></button>
             </div>
             <div className='carrier-card'>
               <h2 className='carrier-title'>SENIOR 3D ARTIST</h2>
-              <button className='apply-btn'>Apply now</button>
+              <button className='apply-btn'><a href="mailto:HR@desertgamestudio.com">Apply now</a></button>
             </div>
             <div className='carrier-card'>
               <h2 className='carrier-title'>GAME DESIGNER</h2>
-              <button className='apply-btn'>Apply now</button>
+              <button className='apply-btn'><a href="mailto:HR@desertgamestudio.com">Apply now</a></button>
             </div>
           </div>
         </div>
