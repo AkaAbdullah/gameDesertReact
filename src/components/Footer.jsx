@@ -72,16 +72,6 @@ const Footer = () => {
             </div>
 
             <ul className="footer-list">
-              <li>{/* <p className='footer-list-title'>Careers</p> */}</li>
-
-              {/* <li>
-                <a href='mailto:HR@desertgamestudio.com' className='footer-link'>
-                  HR@desertgamestudio.com
-                </a>
-              </li> */}
-            </ul>
-
-            <ul className="footer-list">
               <li>
                 <p className="footer-list-title">Need Help?</p>
               </li>

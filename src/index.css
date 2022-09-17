@@ -43,6 +43,10 @@
     display: flex;
     flex-direction: column;
   }
+  .footer-top .container {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 :root {
@@ -1133,8 +1137,8 @@ body {
 }
 
 .footer-top .container {
-  display: grid;
-  gap: 50px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .footer .logo {
@@ -1374,9 +1378,8 @@ body {
     grid-template-columns: 1fr 1fr;
   }
 
-  .footer-brand,
-  .footer-wrapper {
-    grid-column: 1 / 3;
+  .footer-brand {
+    max-width: 280px;
   }
 }
 
@@ -1601,6 +1604,9 @@ body {
 
   .navbar-list {
     display: flex;
+  }
+  .navbar-list:hover {
+    cursor: pointer;
   }
 
   .navbar-item:not(:last-child) {
