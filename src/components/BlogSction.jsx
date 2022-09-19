@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const BlogSction = () => {
   return (
@@ -15,15 +16,21 @@ const BlogSction = () => {
           <div className='carrier-section'>
             <div className='carrier-card'>
               <h2 className='carrier-title'>GAME DEVELOPER</h2>
-              <button className='apply-btn'><a href="mailto:HR@desertgamestudio.com">Apply now</a></button>
+              <button className='apply-btn'>
+                <Link to='/jobs'>Apply now</Link>
+              </button>
             </div>
             <div className='carrier-card'>
               <h2 className='carrier-title'>SENIOR 3D ARTIST</h2>
-              <button className='apply-btn'><a href="mailto:HR@desertgamestudio.com">Apply now</a></button>
+              <button className='apply-btn'>
+                <Link to='/jobs'>Apply now</Link>
+              </button>
             </div>
             <div className='carrier-card'>
               <h2 className='carrier-title'>GAME DESIGNER</h2>
-              <button className='apply-btn'><a href="mailto:HR@desertgamestudio.com">Apply now</a></button>
+              <button className='apply-btn'>
+                <Link to='/jobs'>Apply now</Link>
+              </button>
             </div>
           </div>
         </div>

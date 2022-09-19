@@ -1,73 +1,73 @@
-import React, { useState, useContext } from "react";
-import SearchModal from "./SearchModal";
-import { Link } from "react-scroll";
-import { GiHamburgerMenu } from "react-icons/gi";
+import React, { useState, useContext } from 'react'
+import SearchModal from './SearchModal'
+import { Link } from 'react-scroll'
+import { GiHamburgerMenu } from 'react-icons/gi'
 import {
   AiFillFacebook,
   AiFillTwitterSquare,
   AiFillLinkedin,
   AiOutlineClose,
-} from "react-icons/ai";
-import { BsPinterest, BsSearch } from "react-icons/bs";
-import { NavBarContext } from "../context/cssContext";
-import MenuDropDown from "./MenuDropDown";
+} from 'react-icons/ai'
+import { BsPinterest, BsSearch } from 'react-icons/bs'
+import { NavBarContext } from '../context/cssContext'
+import MenuDropDown from './MenuDropDown'
 
 const TopHeader = () => {
-  const { state1 } = useContext(NavBarContext);
-  const [mobView, setMobView] = state1;
-  const { state2 } = useContext(NavBarContext);
-  const [modal, setModal] = state2;
-  const { state5 } = useContext(NavBarContext);
-  const [toogle, setToogle] = state5;
+  const { state1 } = useContext(NavBarContext)
+  const [mobView, setMobView] = state1
+  const { state2 } = useContext(NavBarContext)
+  const [modal, setModal] = state2
+  const { state5 } = useContext(NavBarContext)
+  const [toogle, setToogle] = state5
 
   const handleSearch = () => {
-    setModal(true);
-  };
+    setModal(true)
+  }
 
   const handleDropDown = () => {
-    setMobView(!mobView);
-    setToogle(!toogle);
-  };
+    setMobView(!mobView)
+    setToogle(!toogle)
+  }
 
-  const [state, setState] = useState(false);
+  const [state, setState] = useState(false)
   const changeValueOnScroll = () => {
-    const scrollValue = document.documentElement.scrollTop;
+    const scrollValue = document.documentElement.scrollTop
     if (scrollValue > 100) {
-      setState(true);
+      setState(true)
     } else {
-      setState(false);
+      setState(false)
     }
-  };
+  }
 
-  window.addEventListener("scroll", changeValueOnScroll);
+  window.addEventListener('scroll', changeValueOnScroll)
 
   return (
     <>
       {modal && <SearchModal />}
-      <header id="top" className="header">
-        <div className="header-top">
-          <div className="container">
-            <div className="countdown-text"></div>
-            <div className="social-wrapper">
-              <p className="social-title">Follow us on :</p>
-              <ul className="social-list">
+      <header id='top' className='header'>
+        <div className='header-top'>
+          <div className='container'>
+            <div className='countdown-text'></div>
+            <div className='social-wrapper'>
+              <p className='social-title'>Follow us on :</p>
+              <ul className='social-list'>
                 <li>
-                  <a href="/" className="social-link">
+                  <a href='/' className='social-link'>
                     <AiFillFacebook />
                   </a>
                 </li>
                 <li>
-                  <a href="/" className="social-link">
+                  <a href='/' className='social-link'>
                     <AiFillTwitterSquare />
                   </a>
                 </li>
                 <li>
-                  <a href="/" className="social-link">
+                  <a href='/' className='social-link'>
                     <BsPinterest />
                   </a>
                 </li>
                 <li>
-                  <a href="/" className="social-link">
+                  <a href='/' className='social-link'>
                     <AiFillLinkedin />
                   </a>
                 </li>
@@ -78,46 +78,46 @@ const TopHeader = () => {
 
         <div
           className={
-            state ? "header-bottom  skewBg active" : "header-bottom  skewBg"
+            state ? 'header-bottom  skewBg active' : 'header-bottom  skewBg'
           }
         >
-          <div className="container">
-            <a href="/" className="logo">
+          <div className='container'>
+            <a href='/' className='logo'>
               Desert Game Studio
             </a>
 
-            <nav className="navbar" data-navbar="">
-              <ul className="navbar-list">
-                <li className="navbar-item">
-                  <Link to="home" className="navbar-link skewBg  ">
+            <nav className='navbar' data-navbar=''>
+              <ul className='navbar-list'>
+                <li className='navbar-item'>
+                  <Link to='home' className='navbar-link skewBg  '>
                     Home
                   </Link>
                 </li>
 
-                <li className="navbar-item">
-                  <Link to="services" className="navbar-link  skewBg">
+                <li className='navbar-item'>
+                  <Link to='services' className='navbar-link  skewBg'>
                     Services
                   </Link>
                 </li>
 
-                <li className="navbar-item">
-                  <Link to="carrier" className="navbar-link skewBg">
+                <li className='navbar-item'>
+                  <Link to='carrier' className='navbar-link skewBg'>
                     Carrier
                   </Link>
                 </li>
-                <li className="navbar-item">
-                  <Link to="contact" className="navbar-link skewBg">
+                <li className='navbar-item'>
+                  <Link to='contact' className='navbar-link skewBg'>
                     Contact
                   </Link>
                 </li>
               </ul>
             </nav>
 
-            <div className="header-actions">
+            <div className='header-actions'>
               <button
-                className="search-btn"
-                aria-label="open search"
-                data-search-toggler=""
+                className='search-btn'
+                aria-label='open search'
+                data-search-toggler=''
                 onClick={handleSearch}
               >
                 <BsSearch />
@@ -125,8 +125,8 @@ const TopHeader = () => {
 
               <button
                 onClick={handleDropDown}
-                className="nav-toggle-btn"
-                aria-label="toggle menu"
+                className='nav-toggle-btn'
+                aria-label='toggle menu'
               >
                 {toogle ? <AiOutlineClose /> : <GiHamburgerMenu />}
                 {mobView && <MenuDropDown />}
@@ -136,7 +136,7 @@ const TopHeader = () => {
         </div>
       </header>
     </>
-  );
-};
+  )
+}
 
-export default TopHeader;
+export default TopHeader
