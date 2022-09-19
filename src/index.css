@@ -15,20 +15,21 @@
   flex-direction: column;
   gap: 20px;
   width: 350px;
-  height: 170px;
-  box-shadow: -5px 3px 0px 3px rgba(233, 164, 1, 0.75);
-  -webkit-box-shadow: -5px 3px 0px 3px rgba(233, 164, 1, 0.75);
-  -moz-box-shadow: -5px 3px 0px 3px rgba(233, 164, 1, 0.75);
+  height: 170px;   
+  box-shadow: -8px 8px 4px -3px rgba(31,39,56,0.85);
+-webkit-box-shadow: -8px 8px 4px -3px rgba(31,39,56,0.85);
+-moz-box-shadow: -8px 8px 4px -3px rgba(31,39,56,0.85);
 }
 .carrier-title {
-  color: #e9a401;
+  color: hsla(222, 18%, 11%, 0.95);
   font-weight: 700;
   font-family: "Oxanium", cursive;
 }
 .apply-btn {
-  background: #e9a401;
+  background: hsla(222, 18%, 11%, 0.95);
   width: 100px;
   height: 40px;
+  color: #fff;
   border-radius: 3px;
   font-family: "Oxanium", cursive;
 }
