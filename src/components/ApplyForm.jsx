@@ -1,49 +1,14 @@
 import React, { useState } from 'react'
 
 const ApplyForm = () => {
-  const [userData, setUserData] = useState({
-    fName: '',
-    lName: '',
-    email: '',
-    mobile: '',
-    profileURL: '',
-    expSalery: '',
-    whyJoin: '',
-  })
-
-  let name, value
-  const handleInputs = (e) => {
-    name = e.target.name
-    value = e.target.value
-    setUserData({ ...userData, [name]: value })
-  }
-
-  const postData = async (e) => {
-    e.preventDefault()
-    const { fName, lName, email, mobile, profileURL, expSalery, whyJoin } =
-      userData
-    const res = await fetch('/jobs', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        fName,
-        lName,
-        email,
-        mobile,
-        profileURL,
-        expSalery,
-        whyJoin,
-      }),
-    })
-    const data = await res.json()
-    if (res.status === 422 || !data) {
-      window.alert('invalid Input')
-    } else {
-      window.alert('Application Submited')
-    }
-  }
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [email, setEmail] = useState('')
+  const [mobile, setMobile] = useState('')
+  const [linkedInURL, setLinkedInUrl] = useState('')
+  const [filePath, setFilePath] = useState('')
+  const [expSalery, setExpSalery] = useState('')
+  const [whyJoin, setWhyJoin] = useState('')
 
   return (
     <>
@@ -51,8 +16,7 @@ const ApplyForm = () => {
         <div className='input-div'>
           <label>First Name</label>
           <input
-            name='fName'
-            id='fName'
+            name='firstName'
             value={userData.fName}
             onChange={handleInputs}
             type='text'
@@ -62,7 +26,7 @@ const ApplyForm = () => {
           ></input>
           <label>Last Name</label>
           <input
-            name='lName'
+            name='lastName'
             value={userData.lName}
             onChange={handleInputs}
             className='nameInput'
@@ -89,7 +53,7 @@ const ApplyForm = () => {
           ></input>
           <label>LinkedIn URL</label>
           <input
-            name='profileURL'
+            name='linkedInURL'
             value={userData.profileURL}
             onChange={handleInputs}
             className='nameInput'
@@ -99,7 +63,7 @@ const ApplyForm = () => {
           <input type='file'></input>
           <span className='attention'>PDF Format is recomended</span>
           <label> Resume</label>
-          <input required type='file'></input>
+          <input name='resume' required type='file'></input>
           <span className='attention'>PDF Format is recomended</span>
           <hr></hr>
           <h3>Questions</h3>
