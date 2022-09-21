@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 
 const ApplyForm = () => {
   const [firstName, setFirstName] = useState('')
@@ -10,15 +11,52 @@ const ApplyForm = () => {
   const [expSalery, setExpSalery] = useState('')
   const [whyJoin, setWhyJoin] = useState('')
 
+  const onChangeFile = (e) => {
+    setFilePath(e.target.files[0])
+  }
+
+  const changeOnClick = (e) => {
+    e.preventDefault()
+    const formData = new FormData()
+
+    formData.append('firstName', firstName)
+    formData.append('lastName', lastName)
+    formData.append('email', email)
+    formData.append('mobile', mobile)
+    formData.append('linkedInURL', linkedInURL)
+    formData.append('filePath', filePath)
+    formData.append('expSalery', expSalery)
+    formData.append('whyJoin', whyJoin)
+
+    setFirstName('')
+    setLastName('')
+    setEmail('')
+    setMobile('')
+    setLinkedInUrl('')
+    setExpSalery('')
+    setWhyJoin('')
+    setFilePath('')
+
+    axios
+      .post('http://localhost:4000/api/jobs', formData)
+      .then((res) => console.log(res.data))
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
   return (
     <>
       <div className='container'>
-        <div className='input-div'>
+        <form
+          onSubmit={changeOnClick}
+          encType='multipart/from-data'
+          className='input-div'
+        >
           <label>First Name</label>
           <input
-            name='firstName'
-            value={userData.fName}
-            onChange={handleInputs}
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
             type='text'
             required
             className='nameInput'
@@ -26,72 +64,68 @@ const ApplyForm = () => {
           ></input>
           <label>Last Name</label>
           <input
-            name='lastName'
-            value={userData.lName}
-            onChange={handleInputs}
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
             className='nameInput'
             type='text'
             placeholder='Please enter your last name here'
           ></input>
           <label>Email Address</label>
           <input
-            name='email'
-            value={userData.email}
-            onChange={handleInputs}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className='nameInput'
             type='email'
             placeholder='Please enter your email address here'
           ></input>
           <label>Mobile </label>
           <input
-            name='mobile'
-            value={userData.mobile}
-            onChange={handleInputs}
+            value={mobile}
+            onChange={(e) => setMobile(e.target.value)}
             className='nameInput'
             type='number'
             placeholder='Please enter your Mobile Number'
           ></input>
           <label>LinkedIn URL</label>
           <input
-            name='linkedInURL'
-            value={userData.profileURL}
-            onChange={handleInputs}
+            accept='application/pdf'
+            value={linkedInURL}
+            onChange={(e) => setLinkedInUrl(e.target.value)}
             className='nameInput'
             type='text'
           ></input>
-          <label>Cover Letter</label>
-          <input type='file'></input>
-          <span className='attention'>PDF Format is recomended</span>
-          <label> Resume</label>
-          <input name='resume' required type='file'></input>
-          <span className='attention'>PDF Format is recomended</span>
+
           <hr></hr>
           <h3>Questions</h3>
           <label>What are your salary expectations?</label>
           <input
-            name='expSalery'
-            value={userData.expSalery}
-            onChange={handleInputs}
+            value={expSalery}
+            onChange={(e) => setExpSalery(e.target.value)}
             required
             className='nameInput'
             type='text'
           ></input>
           <label>Why do you want to work with Mindstorm Studios?</label>
           <input
-            name='whyJoin'
-            value={userData.whyJoin}
-            onChange={handleInputs}
+            value={whyJoin}
+            onChange={(e) => setWhyJoin(e.target.value)}
             required
             className='nameInput'
             type='text'
           ></input>
+          <label> Resume</label>
+          <input
+            type='file'
+            name='filePath'
+            onChange={onChangeFile}
+            required
+          ></input>
+          <span className='attention'>PDF Format is recomended</span>
           <div className='submitContainer'>
-            <button onClick={postData} className='btnSubmit'>
-              Submit
-            </button>
+            <button className='btnSubmit'>Submit</button>
             <button className='btnCancel'>Cancel</button>
           </div>
-        </div>
+        </form>
       </div>
     </>
   )
