@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { NavBarContext } from '../context/cssContext'
 
 const BlogSction = () => {
   const alljobs = [
@@ -16,7 +17,8 @@ const BlogSction = () => {
       title: 'GAME DESIGNER',
     },
   ]
-  const [jobTitle, setJobTitle] = useState('')
+  const { state6 } = useContext(NavBarContext)
+  const [jobTitle, setJobTitle] = state6
 
   return (
     <>
@@ -30,10 +32,13 @@ const BlogSction = () => {
             Following are the new openings to join our Team
           </p>
           <div className='carrier-section'>
-            {alljobs.map((job) => (
-              <div className='carrier-card'>
-                <h2 className='carrier-title'>{job.title}</h2>
-                <button className='apply-btn'>
+            {alljobs.map((jobs) => (
+              <div key={jobs.id} className='carrier-card'>
+                <h2 className='carrier-title'>{jobs.title}</h2>
+                <button
+                  onClick={(e) => setJobTitle(jobs.title)}
+                  className='apply-btn'
+                >
                   <Link to='/jobs'>Apply now</Link>
                 </button>
               </div>

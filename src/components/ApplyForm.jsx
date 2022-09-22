@@ -1,7 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { NavBarContext } from '../context/cssContext'
+
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const ApplyForm = () => {
+  let navigate = useNavigate()
+
+  const { state6 } = useContext(NavBarContext)
+  const [jobTitle, setJobTitle] = state6
+
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
@@ -18,7 +26,7 @@ const ApplyForm = () => {
   const changeOnClick = (e) => {
     e.preventDefault()
     const formData = new FormData()
-
+    formData.append('jobTitle', jobTitle)
     formData.append('firstName', firstName)
     formData.append('lastName', lastName)
     formData.append('email', email)
@@ -39,7 +47,7 @@ const ApplyForm = () => {
 
     axios
       .post('http://localhost:4000/api/jobs', formData)
-      .then((res) => console.log(res.data))
+      .then((res) => navigate('/thankyou'))
       .catch((err) => {
         console.log(err)
       })
