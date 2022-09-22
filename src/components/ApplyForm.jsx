@@ -35,18 +35,18 @@ const ApplyForm = () => {
     formData.append('filePath', filePath)
     formData.append('expSalery', expSalery)
     formData.append('whyJoin', whyJoin)
-
-    setFirstName('')
-    setLastName('')
-    setEmail('')
-    setMobile('')
-    setLinkedInUrl('')
-    setExpSalery('')
-    setWhyJoin('')
-    setFilePath('')
+    console.log(jobTitle)
+    console.log(firstName)
+    console.log(lastName)
+    console.log(email)
+    console.log(mobile)
+    console.log(linkedInURL)
+    console.log(filePath)
+    console.log(expSalery)
+    console.log(whyJoin)
 
     axios
-      .post('https://gamedesert.herokuapp.com/api/jobs', formData)
+      .post('/api/jobs', formData)
       .then((res) => navigate('/thankyou'))
       .catch((err) => {
         console.log(err)
