@@ -46,7 +46,7 @@ const ApplyForm = () => {
     setFilePath('')
 
     axios
-      .post('http://localhost:4000/api/jobs', formData)
+      .post('https://gamedesert.herokuapp.com/api/jobs', formData)
       .then((res) => navigate('/thankyou'))
       .catch((err) => {
         console.log(err)
