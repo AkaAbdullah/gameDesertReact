@@ -2,12 +2,11 @@ import React from 'react'
 import TopHeader from '../components/TopHeader'
 import Footer from '../components/Footer'
 import axios from 'axios'
-import env from 'react-dotenv'
 import { useQuery } from 'react-query'
 
 const DeleteJobs = () => {
   const { isLoading, data } = useQuery('jobs', () => {
-    return axios.get(`env.ProductionBuildVariable/api/jobs`)
+    return axios.get('https://gamedesert.herokuapp.com/api/jobs')
   })
   if (isLoading) {
     return <h2>Loading....</h2>
@@ -16,7 +15,7 @@ const DeleteJobs = () => {
   const handleDelete = (id, e) => {
     e.preventDefault()
     axios
-      .delete(`env.ProductionBuildVariable/api/jobs/${id}`)
+      .delete(`https://gamedesert.herokuapp.com/api/jobs/${id}`)
       .then((res) => {
         alert('Job Deleted')
       })

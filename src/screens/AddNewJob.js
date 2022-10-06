@@ -3,7 +3,6 @@ import Footer from '../components/Footer'
 import TopHeader from '../components/TopHeader'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import env from 'react-dotenv'
 
 const AddNewJob = () => {
   let navigate = useNavigate()
@@ -14,7 +13,7 @@ const AddNewJob = () => {
     e.preventDefault()
     const jobData = { jobTitle, jobDescription }
     axios
-      .post(`env.ProductionBuildVariable/api/addnew`, jobData)
+      .post('https://gamedesert.herokuapp.com/api/addnew', jobData)
       .then((res) => {
         window.alert('New Job Addes Successfully')
         navigate('/admin')

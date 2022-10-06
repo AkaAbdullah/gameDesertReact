@@ -4,7 +4,6 @@ import Footer from '../components/Footer'
 import { useQuery } from 'react-query'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import env from 'react-dotenv'
 
 const ViewApplications = () => {
   const navigate = useNavigate()
@@ -14,7 +13,7 @@ const ViewApplications = () => {
     let value = JSON.parse(localStorage.getItem('auth'))
     if (value === true) {
       axios
-        .get(`env.ProductionBuildVariable/api/jobs`)
+        .get('https://gamedesert.herokuapp.com/api/jobs')
         .then((res) => {
           console.log(res.data)
           setDrop(res.data)
@@ -28,7 +27,7 @@ const ViewApplications = () => {
   }, [])
 
   const { isLoading, data } = useQuery('applicants', () => {
-    return axios.get(`env.ProductionBuildVariable/api/applicants`)
+    return axios.get('https://gamedesert.herokuapp.com/api/applicants')
   })
   if (isLoading) {
     return <h2>Loading....</h2>
@@ -37,7 +36,7 @@ const ViewApplications = () => {
   const handleDelete = (id, e) => {
     e.preventDefault()
     axios
-      .delete(`env.ProductionBuildVariable/api/applicants/${id}`)
+      .delete(`https://gamedesert.herokuapp.com/api/applicants/${id}`)
       .then((res) => {
         alert('Application Deleted')
       })
