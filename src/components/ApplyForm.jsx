@@ -46,7 +46,7 @@ const ApplyForm = () => {
     console.log(whyJoin)
 
     axios
-      .post('https://gamedesert.herokuapp.com/api/jobs', formData)
+      .post('http://gamedesert.herokuapp.com/api/apply', formData)
       .then((res) => navigate('/thankyou'))
       .catch((err) => {
         console.log(err)
