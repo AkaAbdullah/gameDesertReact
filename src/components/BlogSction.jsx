@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom'
 import { NavBarContext } from '../context/cssContext'
 import axios from 'axios'
 import { useQuery } from 'react-query'
+import env from 'react-dotenv'
 
 const BlogSction = () => {
   const { state6 } = useContext(NavBarContext)
   const [jobTitle, setJobTitle] = state6
 
   const { isLoading, data } = useQuery('jobs', () => {
-    return axios.get('http://localhost:4000/api/jobs')
+    return axios.get(`env.ProductionBuildVariable/api/jobs`)
   })
   if (isLoading) {
     return <h2>Loading....</h2>

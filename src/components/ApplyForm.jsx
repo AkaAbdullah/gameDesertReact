@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react'
 import { NavBarContext } from '../context/cssContext'
-
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import env from 'react-dotenv'
 
 const ApplyForm = () => {
   let navigate = useNavigate()
@@ -46,7 +46,7 @@ const ApplyForm = () => {
     console.log(whyJoin)
 
     axios
-      .post('http://localhost:4000/api/jobs', formData)
+      .post(`env.ProductionBuildVariable/api/jobs`, formData)
       .then((res) => navigate('/thankyou'))
       .catch((err) => {
         console.log(err)

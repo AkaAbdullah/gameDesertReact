@@ -4,6 +4,7 @@ import Footer from '../components/Footer'
 import { useQuery } from 'react-query'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import env from 'react-dotenv'
 
 const ViewApplications = () => {
   const navigate = useNavigate()
@@ -13,7 +14,7 @@ const ViewApplications = () => {
     let value = JSON.parse(localStorage.getItem('auth'))
     if (value === true) {
       axios
-        .get('http://localhost:4000/api/jobs')
+        .get(`env.ProductionBuildVariable/api/jobs`)
         .then((res) => {
           console.log(res.data)
           setDrop(res.data)
@@ -27,7 +28,7 @@ const ViewApplications = () => {
   }, [])
 
   const { isLoading, data } = useQuery('applicants', () => {
-    return axios.get('http://localhost:4000/api/applicants')
+    return axios.get(`env.ProductionBuildVariable/api/applicants`)
   })
   if (isLoading) {
     return <h2>Loading....</h2>
@@ -36,7 +37,7 @@ const ViewApplications = () => {
   const handleDelete = (id, e) => {
     e.preventDefault()
     axios
-      .delete(`http://localhost:4000/api/applicants/${id}`)
+      .delete(`env.ProductionBuildVariable/api/applicants/${id}`)
       .then((res) => {
         alert('Application Deleted')
       })
