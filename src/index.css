@@ -5,6 +5,7 @@
 .carrier-section {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
 }
@@ -25,6 +26,7 @@
   font-weight: 700;
   font-family: "Oxanium", cursive;
 }
+
 .apply-btn {
   background: hsla(222, 18%, 11%, 0.95);
   width: 100px;
@@ -114,7 +116,187 @@
   color: #fff;
 }
 
+.adminCards{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-around;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
 
+
+.adminCard{
+  margin-top: 100px;
+  border-radius: 7px;
+  color: #fff;
+  margin-bottom: 100px;
+  width: 300px;
+  text-align: center;
+  height: 43px;
+  font-size: 25px;
+  font-weight: 700;
+  background: #e9a401;
+}
+
+.adminCard:hover{
+  text-align: center;
+  margin-top: 100px;
+  color: #e9a401;
+  margin-bottom: 100px;
+  width: 300px;
+  height: 43px;
+  font-size: 25px;
+  background: #ffffff;
+  align-items: center;
+  justify-content: center;  
+}
+
+.addjobInputsContainer{
+  margin-top: 100px;
+  margin-bottom: 100px;
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.jobsInput{
+  border: 1px solid #fff;
+  width: 400px;
+  height: 33px;
+  border-radius: 5px;
+  color: #fff;
+}
+.jobDesc{
+  border: 1px solid #fff;
+  width: 400px;
+  height: 140px;
+  font-size: larger;
+  border-radius: 5px;
+  color: black
+}
+
+.createJobButton{
+  width: 400px;
+  height: 40px;
+  border-radius: 6px;
+  background: #e9a401;
+}
+.createJobButton:hover{
+  width: 400px;
+  height: 40px;
+  border-radius: 6px;
+  background: #fff;
+}
+.titttile{
+  margin-top: 120px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  justify-content: center;
+
+}
+
+.applciationsContainer{
+  margin-top: 30px;
+  margin-bottom: 100px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.jobTitleCard{
+  background: #e9a401;
+  color: black;
+}
+.applicantsCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 300px;
+  height: 290px;
+  border: 1px solid white;
+}
+.viewResume{
+  width: 150px;
+  height: 25px;
+  background:#e9a401;
+  color: #fff;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.deleteResume{
+  width: 150px;
+  background: red;
+  color: #fff;
+  height: 25px;
+}
+
+.loginInputs{
+  display: flex;
+  flex-direction: column;
+  margin-top: 140px;
+  margin-bottom: 120px;
+  color: #fff;
+  gap: 20px;
+}
+
+.centerInputs{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+.btnLogin{
+  background: #e9a401;
+  width: 400px;
+  height: 50px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.btnLogin:hover{
+  background: #fff;
+  width: 400px;
+  height: 50px;
+  border-radius: 5px;
+  color: #e9a401;
+}
+
+.deleteJobsContainer{
+  margin-top: 120px;
+  margin-bottom: 100px;
+  color: #fff;
+}
+
+.carrier-title1 {
+  color: rgba(31,39,56,0.85);
+  font-weight: 700;
+  font-family: "Oxanium", cursive;
+}
+
+.carrier-card1{
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 350px;
+  height: 170px;   
+  box-shadow: -8px 8px 4px -3px rgba(31,39,56,0.85);
+-webkit-box-shadow: -8px 8px 4px -3px rgba(31,39,56,0.85);
+-moz-box-shadow: -8px 8px 4px -3px rgba(31,39,56,0.85);
+}
 
 @media only screen and (max-width: 600px) {
   .carrier-section {

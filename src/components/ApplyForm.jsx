@@ -46,7 +46,7 @@ const ApplyForm = () => {
     console.log(whyJoin)
 
     axios
-      .post('https://gamedesert.herokuapp.com/api/jobs', formData)
+      .post('http://localhost:4000/api/jobs', formData)
       .then((res) => navigate('/thankyou'))
       .catch((err) => {
         console.log(err)
@@ -113,7 +113,7 @@ const ApplyForm = () => {
             className='nameInput'
             type='text'
           ></input>
-          <label>Why do you want to work with Mindstorm Studios?</label>
+          <label>Why do you want to work with Desert Game Studio?</label>
           <input
             value={whyJoin}
             onChange={(e) => setWhyJoin(e.target.value)}
